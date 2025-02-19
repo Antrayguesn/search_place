@@ -1,0 +1,199 @@
+<?xml version="1.0" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="Aigyre Consult" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <wpt lon="168.9354592" lat="-45.0152189">
+    <name>Kawarau River</name>
+    <cmt>Kawarau</cmt>
+    <desc>?</desc>
+  </wpt>
+  <wpt lon="174.88597099999998" lat="-40.900557">
+    <name>New Zealand</name>
+    <cmt>Aotearoa</cmt>
+    <desc>Nom maori de la NZ</desc>
+  </wpt>
+  <wpt lon="174.50250599999998" lat="-36.98806820000001">
+    <name>Karekare</name>
+    <cmt>Karekare</cmt>
+    <desc>?</desc>
+  </wpt>
+  <wpt lon="176.54999999999998" lat="-40.35">
+    <name>Taumatawhakatangihangakoauauotamateapokaiwhenuakitanatahu</name>
+    <cmt>Taumata</cmt>
+    <desc>Coline avec le nom le plus longs 85 lettres</desc>
+  </wpt>
+  <wpt lon="170.7332869" lat="-45.7828398">
+    <name>Taiaroa Head</name>
+    <cmt>Otago / Taiaro Head</cmt>
+    <desc>Albatros</desc>
+  </wpt>
+  <wpt lon="170.14178830000003" lat="-43.5949749">
+    <name>Aoraki / Mount Cook</name>
+    <cmt>Mont Cook</cmt>
+    <desc>3724m nom maori Aoraki montagne qui perce les nuages</desc>
+  </wpt>
+  <wpt lon="169.01745499999998" lat="-44.864896699999996">
+    <name>Cardrona</name>
+    <cmt>Cardona</cmt>
+    <desc>station de ski</desc>
+  </wpt>
+  <wpt lon="168.8333333" lat="-45.15">
+    <name>The Remarkables</name>
+    <cmt>The remarkables</cmt>
+    <desc>station de ski</desc>
+  </wpt>
+  <wpt lon="174.8636138" lat="-36.785290499999995">
+    <name>Rangitoto Island</name>
+    <cmt>Rangitoto Island</cmt>
+    <desc>Île volcanique réserve naturelle Bach traduction Ciel rouge sang - Île du Nord -. Comporte des bach ainsi que le Musée de la culture Bach. La plupart ont été détruit, 18 sont conservée pour les visiteurs</desc>
+  </wpt>
+  <wpt lon="170.5342048" lat="-45.8491754">
+    <name>Baldwin Street</name>
+    <cmt>Baldwin street</cmt>
+    <desc>- Dunedin / Île du Sud - Rue la plus penché du monde</desc>
+  </wpt>
+  <wpt lon="173.6666667" lat="-42">
+    <name>Kaikoura Ranges</name>
+    <cmt>Kaikoura Ranges</cmt>
+    <desc>Châine de montagne - Nord de Christchurch / Ile du Sud -</desc>
+  </wpt>
+  <wpt lon="176.3689844" lat="-38.358256">
+    <name>Waiotapu Thermal Wonderland</name>
+    <cmt>Wai-o-tapu</cmt>
+    <desc>Traduction maori eaux sacrées - Rotorua / Île du Nord -</desc>
+  </wpt>
+  <wpt lon="176.3689578" lat="-38.359021399999996">
+    <name>Champagne Pool</name>
+    <cmt>Champagne pool</cmt>
+    <desc>- Parc Wai-o-tapu / Rotorua / Île du Nord -  Eaux bouillant bassin au bord jaune</desc>
+  </wpt>
+  <wpt lon="167.8973801" lat="-44.6414024">
+    <name>Milford Sound / Piopiotahi</name>
+    <cmt>Milford sounds</cmt>
+    <desc>(Piopiotahi en Maori). Fjord. Ballade en bateau. Un des lieux les plus visités de la NZ - Southland / Île du Sud -</desc>
+  </wpt>
+  <wpt lon="177.0308956" lat="-38.5429472">
+    <name>Te Urewera</name>
+    <cmt>Te Urewera</cmt>
+    <desc>Plus grande forêt primaire</desc>
+  </wpt>
+  <wpt lon="175.0286083" lat="-39.9330715">
+    <name>Whanganui</name>
+    <cmt>Whanganui</cmt>
+    <desc>fleuve qui possède une entité vivante a part entière (Nom maori</desc>
+  </wpt>
+  <wpt lon="174.0633993" lat="-39.2967702">
+    <name>Mount Taranaki</name>
+    <cmt>Mont Taranki</cmt>
+    <desc>Possède une entité vivante</desc>
+  </wpt>
+  <wpt lon="175.1113208" lat="-38.260687399999995">
+    <name>Waitomo Caves</name>
+    <cmt>Grottes waïtomo</cmt>
+    <desc>- 2h Auckland / Île du Nord - La lumière est créé par un insecte endémique le Titiwai. La visite se fait en barque</desc>
+  </wpt>
+  <wpt lon="176.4022771" lat="-38.2154964">
+    <name>Hawaiki Bay</name>
+    <cmt>Hawaiki</cmt>
+    <desc>Îles sacrés d'ou les Polynésien situent leur origine.</desc>
+  </wpt>
+  <wpt lon="175.6829096" lat="-37.8720905">
+    <name>Hobbiton™ Movie Set Tours</name>
+    <cmt>Hobbiton</cmt>
+    <desc>- 2h30 d'Auckland / Île du Nord - Bag end maison de bilbon</desc>
+  </wpt>
+  <wpt lon="167.8272285" lat="-47.0103212">
+    <name>Stewart Island / Rakiura</name>
+    <cmt>Stewart Island</cmt>
+    <desc>paradis des oiseaux (Kiwi) - Île du Sud -</desc>
+  </wpt>
+  <wpt lon="174.1540659" lat="-35.2167252">
+    <name>Bay Of Islands</name>
+    <cmt>Bay of Island</cmt>
+    <desc>- Northland / Ile du Nord -  150 îles et dauphins</desc>
+  </wpt>
+  <wpt lon="170.9683049" lat="-42.7156909">
+    <name>Hokitika</name>
+    <cmt>Hokitika</cmt>
+    <desc>- Cote Ouest / Île du Sud - grottes de jade aux eaux turquoise beaucoup d'atelier de sculpteur</desc>
+  </wpt>
+  <wpt lon="173.55127769999999" lat="-35.6476762">
+    <name>Waipoua Forest</name>
+    <cmt>Forêt Waipoua</cmt>
+    <desc>- Northland / Île du Nord - Arbre manuka Te Matua Ngahere (père de la forêt) Tane Mahuta (Seigneur de la forêt)</desc>
+  </wpt>
+  <wpt lon="175.9040778" lat="-38.7907719">
+    <name>Lake Taupo</name>
+    <cmt>Lac taupo</cmt>
+    <desc>- Île du Nord - ancien volcan, alimenté par les Huka falls plus gros lacs du pays bcp de sport extrême</desc>
+  </wpt>
+  <wpt lon="6.791944" lat="44.634167">
+    <name>Lac Miroir</name>
+    <cmt>Lac miroir</cmt>
+    <desc>lac du Tekapo autour ses montagnes enneigées de - Île du Sud -</desc>
+  </wpt>
+  <wpt lon="169.964506" lat="-43.4390485">
+    <name>Lake Matheson</name>
+    <cmt>Lac Matheson</cmt>
+    <desc>- prêt du glacier Fox -</desc>
+  </wpt>
+  <wpt lon="172.65830259999998" lat="-42.059324">
+    <name>Rotomairewhenua / Blue Lake</name>
+    <cmt>Blue lake</cmt>
+    <desc>jugé le plus pur</desc>
+  </wpt>
+  <wpt lon="178.45850339999998" lat="-37.771148499999995">
+    <name>Rangitukia</name>
+    <cmt>Rangitukia</cmt>
+    <desc>ville la plus a l'est de - Île du Nord -. Première ville éclairée par la soleil</desc>
+  </wpt>
+  <wpt lon="174.7357528" lat="-39.1447771">
+    <name>Whangamōmona</name>
+    <cmt>Whangamomona</cmt>
+    <desc>ville de chercheurs indépendante situé avant le trou du Hobbit sur la route du monde oublié - Île du Nord -</desc>
+  </wpt>
+  <wpt lon="172.9284145" lat="-34.7194348">
+    <name>Ninety Mile Beach</name>
+    <cmt>Ninety mile Beach</cmt>
+    <desc>Une des plages les plus longues du mondes 90km longe la - péninsule d'Aupouri / pointe nord de le nouvelle Zélande - . Possible de rouler dessus mais considéré comme dangereuse rencontre de la mer de Tasman et le pacifique lieu chargé d'esprit selon les Maoris.</desc>
+  </wpt>
+  <wpt lon="172.7975524" lat="-34.5046779">
+    <name>Cape Reinga</name>
+    <cmt>Te Rerenga Wairua</cmt>
+    <desc>(Reinga les enfers) le lieux du grand saut de départ des esprits. Les âmes des morts se rendent au Cap pour rejoindre l' au dela. Spot de surf . Dune de Te Paki</desc>
+  </wpt>
+  <wpt lon="174.9901902" lat="-39.336773799999996">
+    <name>Bridge to Nowhere Lodge, Tours and Campground</name>
+    <cmt>Bridge to nowhere</cmt>
+    <desc>Sur les eaux du - village Pipiriki / Ile du Nord - surplombe la rivière Mangaparua</desc>
+  </wpt>
+  <wpt lon="170.8262806" lat="-45.345268499999996">
+    <name>Moeraki Boulders Beach</name>
+    <cmt>Moerakis boulders</cmt>
+    <desc>Visible sur la plage de - Koekohe beach / baie de Otago / Dunedin / Île du Sud  - Grands rochers ronds et lisses, rempli de mystère.</desc>
+  </wpt>
+  <wpt lon="168.7394076" lat="-45.021665899999995">
+    <name>Queenstown Airport</name>
+    <cmt>Aéroport Queenstown</cmt>
+    <desc>L'un des plus belles approche d'atterrissage - Entre Remarquables et le lac Wakatipu -</desc>
+  </wpt>
+  <wpt lon="172.9671548" lat="-43.8052059">
+    <name>Akaroa</name>
+    <cmt>Akaroa</cmt>
+    <desc>Ville beaucoup de français très jolie</desc>
+  </wpt>
+  <wpt lon="169.816925" lat="-46.4481392">
+    <name>Nugget Point Lighthouse</name>
+    <cmt>Phare de nuggets</cmt>
+    <desc>point photo très connue. Phare du bout du monde. Otaries a fourrure en bas</desc>
+  </wpt>
+  <wpt lon="172.6775248" lat="-34.426809">
+    <name>Cape Reinga Lighthouse</name>
+    <cmt>Phare de Cape Reigna</cmt>
+    <desc>plus vieux phare kiwi, entre la mer de Tasman et l'océan Pacifique</desc>
+  </wpt>
+  <wpt lon="167.71804260000002" lat="-45.414429299999995">
+    <name>Te Anau</name>
+    <cmt>Te Anau</cmt>
+    <desc>grotte vers luisants - Ile du Sûd -</desc>
+  </wpt>
+</gpx>
+
