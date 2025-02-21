@@ -1,20 +1,27 @@
 from flask import Flask, jsonify, request
 
-from search_place.conf.strategy_sequences import SEQUENCES
+from search_place.conf.strategy_sequences import SEQUENCES, INIT_STRATEGIES
 from search_place.strategies.strategy_manager import StrategyManager
 
 from search_place.error.not_found_error import NotFoundError
 from search_place.services.mongodb_service import MongoDBService
 
+
 import numpy as np
+import logging
 
 
 app = Flask(__name__)
+
+logging.getLogger("pymongo").setLevel(logging.ERROR)
 
 strategy_manager = StrategyManager()
 mongoDB = MongoDBService()
 mongoDB.url = "mongodb://localhost:27017"
 mongoDB.connect()
+
+# Data init when we start the app
+strategy_manager.run_sequence(INIT_STRATEGIES)
 
 # Dynamic
 for method, routes in SEQUENCES.items():

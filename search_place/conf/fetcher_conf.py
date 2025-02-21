@@ -1,11 +1,11 @@
 FETCHER = {
-    "default": ["NominatimFetcher", "DuckDuckGOFetcher"],
-    "nz": {
-        "track": ["DuckDuckGOFetcher"],
-        "hut": ["DuckDuckGOFetcher"],
+    "default": ["LocalFetcher", "NominatimFetcher"],
+    "New Zealand": {
+        "track": ["DOCTrackFetcher"],
+        "wilderness_hut": ["DOCHutFetcher"],
         "default": ["NominatimFetcher", "DuckDuckGOFetcher"]},
 }
 
 COUNTRY_CODE = {
-    "New Zealand": "nz"
+    "nz": "NZL"
 }

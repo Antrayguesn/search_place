@@ -15,8 +15,10 @@ class DuckDuckGOFetcher(Fetcher):
         data_place = get_description_from_duckduckgo(nom_place)
 
         if user_place.place:
-            place.merge(**data_place)
+            new_place = Place(**data_place)
+            new_place.type_place = user_place.place.type_place
+            place = user_place.place.merge(new_place)
         else:
-            place = Place.create_new_place(**data_place)
+            place = Place.create(**data_place)
 
         return place

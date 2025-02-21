@@ -11,5 +11,5 @@ class ProjectStrategy(Strategy):
         self.data.save()
 
     def process(self, project_name):
-        self.data = Project.create_new_project(name=project_name)
+        self.data = Project.create(name=project_name)
         return self.data.to_dict(resolv_dependency=True)

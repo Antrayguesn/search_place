@@ -1,64 +1,48 @@
-import datetime
-import uuid
-
 from search_place.data.model import Model
+from search_place.data.type.hut import Hut
+from search_place.data.type.track import Track
+from search_place.data.type.type import Type
 
 
 class Place(Model):
-    def __init__(self,
-                 name: str = None,
-                 description: str = None,
-                 latitude: float = None,
-                 longitude: float = None,
-                 image_link: str = None,
-                 last_update: float = None,
-                 create_time: float = None,
-                 link: str = None,
-                 id=None,
-                 source_url: str = None,
-                 source_name: str = None,
-                 wikipedia: str = None,
-                 **kwargs
-                 ):
-        super().__init__()
-        self.name = name
-        self.description = description
-        self.coord = (latitude, longitude)
-        self.image_link = image_link
-        self.last_update = last_update
-        self.create_time = create_time
-        self.link = link
-        self.id = id
-        self.source_url = source_url
-        self.source_name = source_name
-        self.wikipedia = wikipedia
+    PROPERTIES = ["id", "name", "description", "latitude", "longitude", "image_link", "source_name", "source_url", "link", "wikipedia", "type_attr", "type_place", "country"]
 
-    @staticmethod
-    def create_new_place(latitude: float, longitude: float, name: str, description: str = "", image_link: str = "", link: str = "", source_url: str = None, source_name: str = None, wikipedia: str = None):
-        create_time = datetime.datetime.now().timestamp()
-        place = Place(latitude=latitude,
-                      longitude=longitude,
-                      description=description,
-                      name=name,
-                      image_link=image_link,
-                      link=link,
-                      create_time=create_time,
-                      last_update=create_time,
-                      id=str(uuid.uuid4()),
-                      source_url=source_url,
-                      source_name=source_name,
-                      wikipedia=wikipedia
-                      )
-        return place
+    TYPE_PROPERTIES = {
+        "wilderness_hut": Hut,
+        "track": Track
+    }
+
+    def __init__(self, **kwargs):
+        self.type_place = kwargs.get("type_place", None)
+        super().__init__(**kwargs)
+        self._type_attr = kwargs.get("type_attr", None)
+
+    @property
+    def type_attr(self):
+        if isinstance(self._type_attr, Type):
+            return self._type_attr
+
+        if self.type_place and self.type_place in self.TYPE_PROPERTIES:
+            self._type_attr = self.TYPE_PROPERTIES[self.type_place](**self._type_attr or {})
+            return self._type_attr
+
+        return None
+
+    @type_attr.setter
+    def type_attr(self, value):
+        if value is None:
+            self._type_attr = None
+        elif isinstance(value, dict) and self.type_place in self.TYPE_PROPERTIES:
+            self._type_attr = self.TYPE_PROPERTIES[self.type_place](**value)
+        elif isinstance(value, Type):
+            self._type_attr = value
+        else:
+            raise TypeError(f"type_attr doit être un dictionnaire ou un objet de type {Type}")
 
     def to_dict(self):
-        return {"name": self.name,
-                "description": self.description,
-                "coord": self.coord,
-                "image_link": self.image_link,
-                "id": self.id,
-                "last_update": self.last_update,
-                "create_time": self.create_time,
-                "source_url": self.source_url,
-                "source_name": self.source_name,
-                "link": self.link}
+        data = {key: getattr(self, key, None) for key in self.__class__.PROPERTIES}
+
+        if data["type_attr"]:
+            data["type_attr"] = self.type_attr.to_dict()
+
+        return data

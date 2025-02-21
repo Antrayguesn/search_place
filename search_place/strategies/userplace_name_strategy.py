@@ -16,7 +16,7 @@ class UserPlaceNameStrategy(Strategy):
         type_place = request_data.get("type_place", None)
         description = request_data.get("description", None)
         try:
-            self.data = UserPlace.create_new_place_user(name=request_data["name"], description=description, country=request_data["country"], type_place=type_place)
+            self.data = UserPlace.creater(name=request_data["name"], description=description, country=request_data["country"], type_place=type_place)
         except KeyError as e:
             raise ParamNotFoundError(f"Param {e} not found on data request")
         return self.data.to_dict()

@@ -1,5 +1,8 @@
 # Request's data are passed by the request_data arg
 
+# Strategies run when the app is started
+INIT_STRATEGIES = ["InitCountriesStrategy", "InitDOCTracksCollectionStrategy", "InitDOCHutsCollectionStrategy"]
+
 
 SEQUENCES = {
     "GET": {
