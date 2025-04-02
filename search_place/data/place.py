@@ -30,6 +30,7 @@ class Place(Model):
 
     @type_attr.setter
     def type_attr(self, value):
+        print(self.__dict__)
         if value is None:
             self._type_attr = None
         elif isinstance(value, dict) and self.type_place in self.TYPE_PROPERTIES:

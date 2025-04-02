@@ -30,7 +30,6 @@ class Fetcher:
 
     def fetch(self, user_place):
         if user_place.place:
-            print(user_place.place)
             place_name = user_place.place.name
         else:
             place_name = user_place.name
@@ -69,6 +68,7 @@ class Fetcher:
             return place
 
         place = Place.create(**data)
+        place.type_place = str_type_place
         if data_type:
             place.type_attr = data_type
         return place

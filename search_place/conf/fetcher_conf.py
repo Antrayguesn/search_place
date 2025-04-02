@@ -1,5 +1,5 @@
 FETCHER = {
-    "default": ["LocalFetcher", "NominatimFetcher"],
+    "default": ["LocalFetcher", "NominatimFetcher", "DuckDuckGOFetcher"],
     "New Zealand": {
         "track": ["DOCTrackFetcher"],
         "wilderness_hut": ["DOCHutFetcher"],

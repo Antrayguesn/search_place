@@ -7,11 +7,11 @@ from search_place.data.user_place import UserPlace
 
 
 class Project(Model):
-    PROPERTIES = ["id", "_id", "name", "created_time", "last_update", "user_place_id"]
+    PROPERTIES = ["id", "_id", "name", "created_time", "last_update", "user_places_id"]
 
     def __init__(self, **kwargs):
-        self.user_places_id = []
         super().__init__(**kwargs)
+        self.user_places_id = kwargs.get("user_places_id", [])
 
     @property
     def user_places(self):

@@ -1,24 +1,24 @@
 from search_place.utils.duckduck_go_search_utils import get_description_from_duckduckgo
 from search_place.fetchers.fetcher import Fetcher
 
-from search_place.data.place import Place
+from search_place.error.not_found_error import PlaceNotFoundError
 
 
 class DuckDuckGOFetcher(Fetcher):
-    def fetch(self, user_place):
-        if user_place.place:
-            place = user_place.place
-            nom_place = user_place.place.name
-        else:
-            nom_place = user_place.name
+    MATCHING_RULES = {
+        "latitude": "latitude",
+        "longitude": "longitude",
+        "name": "name",
+        "link": "link",
+        "source_url": "source_url",
+        "source_name": "source_name",
+        "description": "description",
+        "image_link": "image_link",
+    }
 
-        data_place = get_description_from_duckduckgo(nom_place)
+    def search(self, place_name, user_place):
+        data_place = get_description_from_duckduckgo(place_name)
 
-        if user_place.place:
-            new_place = Place(**data_place)
-            new_place.type_place = user_place.place.type_place
-            place = user_place.place.merge(new_place)
-        else:
-            place = Place.create(**data_place)
-
-        return place
+        if data_place is None:
+            raise PlaceNotFoundError
+        return data_place

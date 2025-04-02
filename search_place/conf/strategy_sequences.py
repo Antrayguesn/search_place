@@ -15,9 +15,19 @@ SEQUENCES = {
         "/project/<string:project_id>": {
             "STRATEGIES": [
                 {"GetProjectStrategy": ["project_id"]}
-
+            ]
+        },
+        "/type/<string:country_name>": {
+            "STRATEGIES": [
+                {"GetTypeByCountryStrategy": ["country_name"]}
+            ]
+        },
+        "/countries": {
+            "STRATEGIES": [
+                "GetCountriesStrategy"
             ]
         }
+
     },
     "POST": {
         "/fetch_place_data": {
@@ -28,6 +38,11 @@ SEQUENCES = {
         "/place_name": {
             "STRATEGIES": [
                 {"UserPlaceNameStrategy": ["request_data"]}
+            ]
+        },
+        "/userplace/<string:userplace_id>": {
+            "STRATEGIES": [
+                {"UpdateUserPlaceStrategy": ["userplace_id", "request_data"]}
             ]
         },
         "/project/<string:project_name>": {

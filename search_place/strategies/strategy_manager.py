@@ -7,6 +7,9 @@ from search_place.strategies.project.create_userplace_in_project_strategy import
 from search_place.strategies.DOCAPI.init_DOC_tracks_collection_strategy import InitDOCTracksCollectionStrategy
 from search_place.strategies.DOCAPI.init_DOC_huts_collection_strategy import InitDOCHutsCollectionStrategy
 from search_place.strategies.init_countries_strategy import InitCountriesStrategy
+from search_place.strategies.get_type_by_country_strategy import GetTypeByCountryStrategy
+from search_place.strategies.get_enum.get_countries_strategy import GetCountriesStrategy
+from search_place.strategies.update_userplace_strategy import UpdateUserPlaceStrategy
 
 from search_place.utils.singleton import Singleton
 from search_place.data.log import log, INFO_END_PROCESS, INFO_LOADING_DATA, INFO_RUN_STRATEGIES
@@ -23,7 +26,10 @@ class StrategyManager(metaclass=Singleton):
                            CreateUserPlaceInProjectStrategy.__name__: CreateUserPlaceInProjectStrategy,
                            InitDOCTracksCollectionStrategy.__name__: InitDOCTracksCollectionStrategy,
                            InitDOCHutsCollectionStrategy.__name__: InitDOCHutsCollectionStrategy,
-                           InitCountriesStrategy.__name__: InitCountriesStrategy
+                           InitCountriesStrategy.__name__: InitCountriesStrategy,
+                           GetCountriesStrategy.__name__: GetCountriesStrategy,
+                           GetTypeByCountryStrategy.__name__: GetTypeByCountryStrategy,
+                           UpdateUserPlaceStrategy.__name__: UpdateUserPlaceStrategy
                            }
 
     def run_sequence(self, sequence, **kwargs):

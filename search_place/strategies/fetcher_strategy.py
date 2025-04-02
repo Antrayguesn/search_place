@@ -9,7 +9,6 @@ from search_place.fetchers.DOCHut_fetcher import DOCHutFetcher
 from search_place.fetchers.DOCTrack_fetcher import DOCTrackFetcher
 
 from search_place.data.user_place import UserPlace
-from search_place.data.place import Place
 from search_place.data.log import log
 
 from search_place.error.not_found_error import PlaceNotFoundError
@@ -30,9 +29,11 @@ class FetcherStrategy(Strategy):
 
     def load_data(self):
         self.data = UserPlace.find({"place_id": None})
-        log("DEBUG_0001", f"{len(self.data)} found")
+        user_place_names = [n.name for n in self.data if n]
+        log("INFO_0001", f"{len(self.data)} places found : {" | ".join(user_place_names)}")
 
     def write_data(self):
+        log("DEBUG_0017", f"{len(self.output_data)} found to write")
         if self.output_data:
             for place in self.output_data:
                 if place:
@@ -40,10 +41,10 @@ class FetcherStrategy(Strategy):
 
     def process(self):
         self.output_data = []
-        fetcher_names = deque(FETCHER["default"])
         for userplace in self.data:
+            fetcher_names = deque(FETCHER["default"])
             fetcher_country = None
-            log("DEBUG_0002", f"Processing user_place : {userplace.id}")
+            log("DEBUG_0002", f"Processing user_place : {userplace.name}", id=userplace.id)
             country_place = userplace.country
             type_place = userplace.type_place
 
@@ -69,11 +70,15 @@ class FetcherStrategy(Strategy):
                 if place:
                     userplace.place_id = place.id
                     userplace.type_place = place.type_place
+                    place.country = userplace.country
                     userplace.update()
                     place.save()
                     if fetcher_country and type_place != place.type_place:
                         type_place = place.type_place
-                        log("INFO_0010", f"Queue fetcher {fetcher_country[type_place]} because type_place {type_place} detected")
-                        fetcher_names.extend(fetcher_country[type_place])
+                        try:
+                            log("INFO_0010", f"Queue fetcher {fetcher_country[type_place]} because type_place {type_place} detected")
+                            fetcher_names.extend(fetcher_country[type_place])
+                        except KeyError:
+                            log("WARNING_0005", f"No fetcher for type {type_place}")
             self.output_data.append(place)
         return [n.to_dict() for n in self.output_data if n is not None]

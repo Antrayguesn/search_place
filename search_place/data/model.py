@@ -27,16 +27,26 @@ class Model:
 
     def save(self):
         if "_id" in self.__dict__ and self._id:
+            log("INFO_0011", f"Update {self.__class__.__name__} id: {self.id}", id=self.id, mongo_id=self._id)
             self.update()
         else:
+            log("INFO_00012", f"Insert {self.__class__.__name__} id: {self.id}", id=self.id)
             inserted_id = self.collection.insert_one(self.to_dict())
             self._id = inserted_id
+            log("INFO_00013", f"Inserted {self.__class__.__name__}", id=self.id, mongo_id=self._id)
 
     @classmethod
     def insert_many(cls, data):
         db = MongoDBService().db
         collection = db[cls.__name__.lower()]
         collection.insert_many(data)
+
+    @classmethod
+    def distinct(cls, prop, query):
+        db = MongoDBService().db
+        collection = db[cls.__name__.lower()]
+        documents = collection.distinct(prop, query)
+        return [document for document in documents]
 
     @classmethod
     def is_empty(cls):
@@ -50,6 +60,7 @@ class Model:
         Met à jour les champs qui sont None avec les valeurs de l'autre instance.
         Si `force=True`, remplace même les valeurs existantes.
         """
+        merging_type.id = None
         for key, value in merging_type.to_dict().items():
             attr = getattr(self, key, None)
 

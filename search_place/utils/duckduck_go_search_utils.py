@@ -4,7 +4,13 @@ import simplejson
 from search_place.error.search_error import SearchError
 from search_place.error.not_found_error import PlaceNotFoundError
 
-DUCKDUCK_URL = "https://duckduckgo.com/?q={search}&kl={locale}&format=json&kp=-2&kc=1&kaf=1"
+from search_place.data.log import log
+
+import urllib.parse
+
+
+DUCKDUCK_URL = "https://duckduckgo.com/?"
+ARGS = "?q={search}&kl={locale}&format=json&kp=-2&kc=1&kaf=1"
 PAYS = "New Zealand"
 LOCALE = "fr-fr"
 LOCALE_NZ = "nz-en"
@@ -13,7 +19,23 @@ IMAGE_URL = "https://duckduckgo.com/{image}"
 
 # DuckDuckGO
 def duckduckgo_search(place_name: str, locale=LOCALE):
-    res = requests.get(DUCKDUCK_URL.format(search=place_name, locale=locale))
+    # duckduckurl = DUCKDUCK_URL.format(search=place_name, locale=locale)
+    url = DUCKDUCK_URL
+    params = {
+        'q': place_name,
+        'kl': locale,
+        "format": "json",
+        "kp": -2,
+        "kc": 1,
+        "kz": -1,
+        "kav": 1,
+        "kaf": 1,
+        "kac": 1}
+    duckduckurl = url + urllib.parse.urlencode(params)
+
+    log("DEBUG_0008", duckduckurl)
+
+    res = requests.get(duckduckurl)
 
     if res.status_code >= 300:
         raise SearchError
@@ -58,6 +80,6 @@ def get_description_from_duckduckgo(nom_lieu: str, locale=LOCALE_NZ):
         except IndexError:
             pass
     if data_activities["Image"]:
-        data['image_link'] = "{{" + IMAGE_URL.format(image=data_activities["Image"]) + f"|{data_activities["ImageWidth"]}" + "}}"
+        data['image_link'] = IMAGE_URL.format(image=data_activities["Image"])
 
     return data
